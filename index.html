@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GudWin BookS | ГудВин Букс</title>
+    <meta
+      name="description"
+      content="GudWin BookS — сказочный сервис генерации комиксов и детских сказок с текстом, иллюстрациями и озвучкой. Оплата Telegram Stars."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Forum&family=Marck+Script&family=Unbounded:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="splash" id="splash">
+      <div class="sparkle-layer"></div>
+      <div class="book-logo">
+        <div class="book">
+          <div class="book-page left"></div>
+          <div class="book-page right"></div>
+          <div class="book-star">✶</div>
+        </div>
+        <h1>GudWin BookS</h1>
+        <p>ГудВин Букс</p>
+      </div>
+    </div>
+
+    <div class="stars-bg" aria-hidden="true"></div>
+
+    <header class="header">
+      <div class="brand">
+        <span class="brand-main">GudWin BookS</span>
+        <span class="brand-sub">ГудВин Букс</span>
+      </div>
+      <nav class="nav">
+        <a href="#features">Возможности</a>
+        <a href="#generator">Генератор</a>
+        <a href="#pricing">Тарифы</a>
+        <a href="#legal">Документы</a>
+      </nav>
+      <a class="tg-login" href="https://t.me/" target="_blank" rel="noreferrer">Войти через Telegram</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">арт • комиксы • старинные книги • сказки</p>
+          <h2>Создавайте волшебные сказки и комиксы с ИИ за пару кликов</h2>
+          <p>
+            Тексты, картинки и озвучка сказок в одном месте. Русский интерфейс по умолчанию, английский как дубль.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#generator">Создать проект</a>
+            <a class="btn btn-ghost" href="#demo">Посмотреть демо</a>
+          </div>
+        </div>
+        <div class="hero-art" id="demo">
+          <div class="magic-card">
+            <h3>Демо-сказка</h3>
+            <p>«Лунный замок и храбрый лис»</p>
+            <ul>
+              <li>Возраст: 6–8</li>
+              <li>Стиль: Акварельная сказка</li>
+              <li>Озвучка: Фея</li>
+            </ul>
+            <button class="btn btn-small">Слушать демо</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="features reveal" id="features">
+        <article>
+          <h3>Комиксы с ИИ</h3>
+          <p>Синопсис → сценарий → страницы и кадры с репликами.</p>
+        </article>
+        <article>
+          <h3>Сказки для детей</h3>
+          <p>Возраст, тема, мораль → главы и сказочные иллюстрации.</p>
+        </article>
+        <article>
+          <h3>Сказка голосом</h3>
+          <p>Генерация озвучки: фея, волшебник, нейтральный голос.</p>
+        </article>
+      </section>
+
+      <section class="workflow reveal">
+        <h3>Как это работает</h3>
+        <div class="steps">
+          <div><strong>1.</strong> Придумайте идею</div>
+          <div><strong>2.</strong> Выберите стиль</div>
+          <div><strong>3.</strong> Смотрите и слушайте</div>
+        </div>
+      </section>
+
+      <section class="generator reveal" id="generator">
+        <div class="panel">
+          <h3>Создать сказку</h3>
+          <label>Идея сюжета<textarea id="storyIdea" placeholder="Например: девочка и дракон учатся дружбе"></textarea></label>
+          <div class="grid-two">
+            <label>Возраст
+              <select id="age">
+                <option>4–6</option>
+                <option selected>6–8</option>
+                <option>8–12</option>
+              </select>
+            </label>
+            <label>Стиль
+              <select id="style">
+                <option>Акварельная сказка</option>
+                <option>Старинная гравюра</option>
+                <option>Золотая книга</option>
+              </select>
+            </label>
+          </div>
+          <button class="btn btn-primary" id="generateStory">Сгенерировать сказку</button>
+        </div>
+
+        <div class="panel">
+          <h3>Результат</h3>
+          <div class="result" id="resultBox">
+            <p class="muted">Здесь появится текст истории и кнопка озвучки.</p>
+          </div>
+          <div class="audio-player">
+            <button class="btn btn-small">▶ Слушать</button>
+            <span>mp3 • demo</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="pricing reveal" id="pricing">
+        <h3>Тарифы (Telegram Stars)</h3>
+        <div class="pricing-grid">
+          <article>
+            <h4>Бесплатный</h4>
+            <p class="price">0 XTR</p>
+            <ul>
+              <li>Ограниченные генерации</li>
+              <li>Без экспорта</li>
+            </ul>
+          </article>
+          <article>
+            <h4>GudWin Light</h4>
+            <p class="price">500 XTR</p>
+            <ul>
+              <li>До 20 сказок / мес</li>
+              <li>До 6 комиксов</li>
+              <li>До 10 озвучек</li>
+            </ul>
+          </article>
+          <article>
+            <h4>GudWin Pro</h4>
+            <p class="price">1000 XTR</p>
+            <ul>
+              <li>До 80 сказок / мес</li>
+              <li>До 30 комиксов</li>
+              <li>Приоритетная очередь</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="legal">
+      <div>
+        <h4>Документы</h4>
+        <a href="./legal/offer.html">Пользовательское соглашение</a>
+        <a href="./legal/privacy.html">Политика конфиденциальности</a>
+        <a href="./legal/personal-data.html">Политика ПДн (152-ФЗ)</a>
+        <a href="./legal/ai-rules.html">Правила ИИ-контента</a>
+      </div>
+      <div>
+        <h4>Реквизиты</h4>
+        <p>Заполнить перед релизом: ИП/ООО, ИНН, ОГРН, адрес, e-mail.</p>
+        <p>Сайт работает на русском языке. English version available.</p>
+      </div>
+      <div>
+        <h4>Платежи</h4>
+        <p>Оплата только Telegram Stars (XTR), не фиатная валюта.</p>
+        <a href="https://telegram.org/blog/telegram-stars" target="_blank" rel="noreferrer">О Stars</a>
+      </div>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
