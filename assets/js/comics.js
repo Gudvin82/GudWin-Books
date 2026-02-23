@@ -1,60 +1,26 @@
-(function () {
-  const form = document.getElementById("comics-form");
-  const result = document.getElementById("comics-result");
-  const rerenderBtn = document.getElementById("comics-rerender");
-  const ttsBtn = document.getElementById("comics-tts");
-  const progress = document.getElementById("comics-progress");
+(() => {
+  const form = document.getElementById('comics-form');
+  const result = document.getElementById('comics-result');
+  const tts = document.getElementById('comics-tts');
+  const status = document.getElementById('comics-status');
 
   if (!(form instanceof HTMLFormElement) || !result) return;
 
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
     const fd = new FormData(form);
+    const genre = esc(fd.get('genre'));
+    const synopsis = esc(fd.get('synopsis'));
 
-    const genre = safeText(fd.get("genre"));
-    const pages = safeText(fd.get("pages"));
-    const style = safeText(fd.get("style"));
-    const synopsis = safeText(fd.get("synopsis"));
-
-    result.innerHTML = "<p class=\"muted\">Собираем сценарий комикса...</p>";
-
-    window.setTimeout(() => {
-      result.innerHTML = `
-        <h3>${genre} / ${style}</h3>
-        <p><strong>Страницы:</strong> ${pages} | <strong>Синопсис:</strong> ${synopsis}</p>
-        <p>Страница 1: Завязка истории и главный конфликт.</p>
-        <p>Страница 2: Погоня, динамика и клиффхэнгер.</p>
-        <p>Страница 3: Развязка и крючок на продолжение.</p>
-        <div class="story-grid" style="grid-template-columns: repeat(3, 1fr); margin-top: 10px;">
-          <article class="story-grid-ill">Кадр A</article>
-          <article class="story-grid-ill">Кадр B</article>
-          <article class="story-grid-ill">Кадр C</article>
-        </div>
-      `;
-    }, 900);
+    result.innerHTML = `\n      <h2>Результат генерации комикса</h2>\n      <p><strong>Жанр:</strong> ${genre}</p>\n      <p><strong>Синопсис:</strong> ${synopsis}</p>\n      <p>Страница 1: Завязка и главный конфликт.</p>\n      <p>Страница 2: Бой и неожиданный поворот.</p>\n      <p>Страница 3: Финал и крючок на продолжение.</p>\n    `;
   });
 
-  rerenderBtn?.addEventListener("click", () => {
-    result.insertAdjacentHTML("beforeend", "<p class=\"muted\">Выбранный кадр перегенерирован.</p>");
-  });
-
-  ttsBtn?.addEventListener("click", () => {
-    animateProgress(progress);
+  tts?.addEventListener('click', () => {
+    if (status) status.textContent = 'Озвучка комикса сгенерирована (demo mp3)';
   });
 })();
 
-function safeText(value) {
-  const raw = typeof value === "string" ? value.trim().slice(0, 160) : "";
-  return window.GW.escapeHtml(raw);
-}
-
-function animateProgress(progressNode) {
-  if (!progressNode) return;
-  let val = 0;
-  progressNode.style.width = "0%";
-  const timer = window.setInterval(() => {
-    val += 7;
-    progressNode.style.width = `${Math.min(val, 100)}%`;
-    if (val >= 100) window.clearInterval(timer);
-  }, 90);
+function esc(v) {
+  const s = typeof v === 'string' ? v.slice(0, 120) : '';
+  return s.replace(/[&<>"']/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[ch]));
 }

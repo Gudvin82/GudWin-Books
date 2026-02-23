@@ -3,66 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Комиксы / Comics - GudWin BookS / ГудВин Букс</title>
-    <meta name="description" content="Комикс-раздел GudWin BookS: генерация сценария, страниц и кадров." />
+    <title>Комиксы - GudWin BookS</title>
+    <meta name="description" content="Раздел комиксов GudWin BookS." />
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
-  <body data-page="comics">
-    <canvas id="magic-particles" class="magic-particles" aria-hidden="true"></canvas>
-
-    <header class="site-header top-header">
-      <a class="logo" href="./index.html"><img src="./assets/images/logo-2.png" alt="GudWin BookS" class="logo-image" /></a>
-      <nav class="nav-links">
-        <a href="./index.html">Главная / Home</a>
-        <a href="./fairy.html">Сказки / Fairy</a>
+  <body>
+    <header class="topbar">
+      <a href="./index.html"><img src="./assets/images/logo-2.png" alt="GudWin BookS" class="top-logo" /></a>
+      <nav class="mini-nav">
+        <a href="./index.html">Главная</a>
+        <a href="./fairy.html">Сказки</a>
       </nav>
-      <a class="btn btn-tg" href="https://t.me/" target="_blank" rel="noreferrer">Войти через Telegram</a>
     </header>
 
-    <main class="main-wrap">
-      <section class="reference-stage comics-stage reveal">
-        <div class="stage-overlay one-overlay">
-          <article class="overlay-card large-card comic-accent">
-            <h1>Создавайте комиксы с ИИ / Create Comics with AI</h1>
-            <form id="comics-form" class="form-grid" autocomplete="off">
-              <div class="inputs-inline">
-                <select name="genre" required><option>Супергерои</option><option>Фэнтези</option><option>Sci-Fi</option><option>Приключения</option></select>
-                <select name="pages" required><option>4</option><option selected>8</option><option>12</option></select>
-              </div>
-              <div class="inputs-inline">
-                <select name="style" required><option>Классический комикс</option><option>Манга</option><option>Графический роман</option></select>
-                <input type="text" value="Сюжет: герой сражается с кодлуном" readonly />
-              </div>
-              <textarea name="synopsis" rows="3" placeholder="Краткий синопсис" required>Команда героев спасает город от энергетического шторма</textarea>
-              <div class="actions-row">
-                <button class="btn btn-primary" type="submit">Сгенерировать комикс</button>
-                <button class="btn" type="button" id="comics-rerender">Перегенерировать кадр</button>
-              </div>
-            </form>
-          </article>
+    <main class="page">
+      <section class="mockup-wrap">
+        <div class="mockup comics-mockup">
+          <img src="./assets/images/comics-reference.png" alt="Страница комиксов" class="mockup-image" />
+
+          <form id="comics-form" class="controls controls-comics-page" autocomplete="off">
+            <select name="genre"><option>Супергерои</option><option>Фэнтези</option></select>
+            <input name="synopsis" value="Герой сражается со злым кодуном" />
+            <button type="submit">Сгенерировать комикс</button>
+          </form>
+
+          <div class="voice-box comic-voice-box">
+            <button id="comics-tts">Слушать комикс</button>
+            <span id="comics-status">Голос: эпичный</span>
+          </div>
         </div>
       </section>
 
-      <section class="result-section reveal">
-        <article class="panel">
-          <h2>Сценарий и кадры / Script and Frames</h2>
-          <div id="comics-result" class="result-box"><p class="muted">После генерации появятся страницы и реплики.</p></div>
-          <div class="tts-row" style="margin-top:10px;">
-            <select id="comics-voice"><option>Эпичный / Epic</option><option>Нейтральный / Neutral</option></select>
-            <button class="btn btn-primary" type="button" id="comics-tts">Слушать комикс</button>
-          </div>
-          <div class="progress-bar"><span id="comics-progress"></span></div>
-        </article>
+      <section class="result-panel" id="comics-result">
+        <h2>Результат генерации комикса</h2>
+        <p>Укажите жанр и синопсис, затем запустите генерацию.</p>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="footer-col"><h4>Документы / Legal</h4><a href="./legal/offer.html">Offer</a><a href="./legal/privacy.html">Privacy</a><a href="./legal/personal-data.html">Personal Data</a></div>
-      <div class="footer-col"><h4>Контакты / Contacts</h4><p>legal@gudwinbooks.ru</p><p>Support: Telegram</p></div>
-      <div class="footer-col"><h4>Примечание / Note</h4><p>RU интерфейс основной. EN дубль равного размера.</p></div>
+    <footer class="footer">
+      <div>Документы РФ 2026</div>
+      <div class="footer-links">
+        <a href="./legal/offer.html">Оферта</a>
+        <a href="./legal/privacy.html">Конфиденциальность</a>
+        <a href="./legal/personal-data.html">ПДн</a>
+        <a href="./legal/consent.html">Согласие</a>
+        <a href="./legal/ai-policy.html">ИИ-контент</a>
+      </div>
     </footer>
 
-    <script src="./assets/js/main.js"></script>
     <script src="./assets/js/comics.js"></script>
   </body>
 </html>

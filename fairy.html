@@ -3,67 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Сказки / Fairy Tales - GudWin BookS / ГудВин Букс</title>
-    <meta name="description" content="Сказочный раздел GudWin BookS: генерация сказок, иллюстраций и озвучки." />
+    <title>Сказки - GudWin BookS</title>
+    <meta name="description" content="Раздел сказок GudWin BookS." />
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
-  <body data-page="fairy">
-    <canvas id="magic-particles" class="magic-particles" aria-hidden="true"></canvas>
-
-    <header class="site-header top-header">
-      <a class="logo" href="./index.html"><img src="./assets/images/logo-2.png" alt="GudWin BookS" class="logo-image" /></a>
-      <nav class="nav-links">
-        <a href="./index.html">Главная / Home</a>
-        <a href="./comics.html">Комиксы / Comics</a>
+  <body>
+    <header class="topbar">
+      <a href="./index.html"><img src="./assets/images/logo-2.png" alt="GudWin BookS" class="top-logo" /></a>
+      <nav class="mini-nav">
+        <a href="./index.html">Главная</a>
+        <a href="./comics.html">Комиксы</a>
       </nav>
-      <a class="btn btn-tg" href="https://t.me/" target="_blank" rel="noreferrer">Войти через Telegram</a>
     </header>
 
-    <main class="main-wrap">
-      <section class="reference-stage fairy-stage reveal">
-        <div class="stage-overlay one-overlay">
-          <article class="overlay-card large-card">
-            <h1>Создавайте сказки с ИИ / Create Fairy Tales with AI</h1>
-            <form id="fairy-form" class="form-grid" autocomplete="off">
-              <div class="inputs-inline triple">
-                <select name="age" required><option>4-6 лет</option><option selected>6-8 лет</option><option>8-12 лет</option><option>12-18 лет</option></select>
-                <select name="theme" required><option>Дружба</option><option>Приключения</option><option>Космос</option><option>Животные</option></select>
-                <select name="moral" required><option>Доброта</option><option>Смелость</option><option>Честность</option></select>
-              </div>
-              <div class="inputs-inline">
-                <select name="length" required><option>Короткая (3-5 мин)</option><option selected>Средняя (8-10 мин)</option><option>Длинная (15-20 мин)</option></select>
-                <select name="style" required><option>Акварельная сказка</option><option>Старинная гравюра</option><option>Книжная графика</option></select>
-              </div>
-              <textarea name="idea" rows="3" placeholder="Идея сказки" required>Маленький дракон учится дружбе и доброте</textarea>
-              <div class="actions-row">
-                <button class="btn btn-primary" type="submit">Сгенерировать сказку</button>
-                <button class="btn" type="button" id="fairy-regenerate">Перегенерировать иллюстрации</button>
-              </div>
-            </form>
-          </article>
+    <main class="page">
+      <section class="mockup-wrap">
+        <div class="mockup fairy-mockup">
+          <img src="./assets/images/fairy-reference.png" alt="Страница сказок" class="mockup-image" />
+
+          <form id="fairy-form" class="controls controls-fairy-page" autocomplete="off">
+            <select name="age"><option>4-6 лет</option><option>6-8 лет</option></select>
+            <select name="theme"><option>Дружба</option><option>Приключения</option></select>
+            <select name="moral"><option>Добро</option><option>Смелость</option></select>
+            <button type="submit">Сгенерировать сказку</button>
+          </form>
+
+          <div class="voice-box">
+            <button id="fairy-tts">Слушать сказку</button>
+            <span id="fairy-status">Голос: фея</span>
+          </div>
         </div>
       </section>
 
-      <section class="result-section reveal">
-        <article class="panel">
-          <h2>Результат / Result</h2>
-          <div id="fairy-result" class="result-box"><p class="muted">После генерации здесь появятся главы и мини-галерея.</p></div>
-          <div class="tts-row" style="margin-top:10px;">
-            <select id="fairy-voice"><option>Фея / Fairy</option><option>Волшебник / Wizard</option><option>Нейтральный / Neutral</option></select>
-            <button class="btn btn-primary" type="button" id="fairy-tts">Слушать сказку</button>
-          </div>
-          <div class="progress-bar"><span id="fairy-progress"></span></div>
-        </article>
+      <section class="result-panel" id="fairy-result">
+        <h2>Результат генерации сказки</h2>
+        <p>Заполните параметры и нажмите «Сгенерировать сказку».</p>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="footer-col"><h4>Документы / Legal</h4><a href="./legal/offer.html">Offer</a><a href="./legal/privacy.html">Privacy</a><a href="./legal/personal-data.html">Personal Data</a></div>
-      <div class="footer-col"><h4>Контакты / Contacts</h4><p>legal@gudwinbooks.ru</p><p>Support: Telegram</p></div>
-      <div class="footer-col"><h4>Примечание / Note</h4><p>RU интерфейс основной. EN дубль равного размера.</p></div>
+    <footer class="footer">
+      <div>Документы РФ 2026</div>
+      <div class="footer-links">
+        <a href="./legal/offer.html">Оферта</a>
+        <a href="./legal/privacy.html">Конфиденциальность</a>
+        <a href="./legal/personal-data.html">ПДн</a>
+        <a href="./legal/consent.html">Согласие</a>
+        <a href="./legal/ai-policy.html">ИИ-контент</a>
+      </div>
     </footer>
 
-    <script src="./assets/js/main.js"></script>
     <script src="./assets/js/fairy.js"></script>
   </body>
 </html>

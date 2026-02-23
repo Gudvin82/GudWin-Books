@@ -3,99 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GudWin BookS / ГудВин Букс - Выбор Раздела</title>
-    <meta name="description" content="Главная GudWin BookS: выбор раздела Сказки или Комиксы, авторизация Telegram и оплата Stars." />
+    <title>GudWin BookS / ГудВин Букс</title>
+    <meta name="description" content="GudWin BookS: выбор раздела Сказки или Комиксы." />
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
-  <body data-page="home">
-    <div class="splash" id="splash" aria-hidden="false">
-      <img src="./assets/images/logo-1.png" alt="GudWin BookS" class="splash-logo" />
-      <p>ГудВин Букс</p>
-    </div>
-
-    <canvas id="magic-particles" class="magic-particles" aria-hidden="true"></canvas>
-
-    <header class="site-header top-header">
-      <a class="logo" href="./index.html" aria-label="GudWin BookS">
-        <img src="./assets/images/logo-2.png" alt="GudWin BookS / ГудВин Букс" class="logo-image" />
-      </a>
-      <a class="btn btn-tg" href="https://t.me/" target="_blank" rel="noreferrer">Войти через Telegram / Login via Telegram</a>
+  <body>
+    <header class="topbar">
+      <img src="./assets/images/logo-2.png" alt="GudWin BookS / ГудВин Букс" class="top-logo" />
+      <a class="top-btn" href="https://t.me/" target="_blank" rel="noreferrer">Войти через Telegram</a>
     </header>
 
-    <main class="main-wrap">
-      <section class="reference-stage home-stage reveal">
-        <div class="stage-overlay split-overlay">
-          <article class="overlay-card fairy-side">
-            <h2>Сказки / Fairy Tales</h2>
-            <div class="inputs-inline">
-              <select>
-                <option>Возраст: 4-6 лет</option>
-                <option>Возраст: 6-8 лет</option>
-                <option>Возраст: 8-12 лет</option>
-              </select>
-              <select>
-                <option>Тема: Дружба</option>
-                <option>Тема: Приключения</option>
-                <option>Тема: Космос</option>
-              </select>
-            </div>
-            <a class="btn btn-primary" href="./fairy.html">Создать сказку</a>
-          </article>
+    <main class="page">
+      <section class="mockup-wrap">
+        <div class="mockup home-mockup">
+          <img src="./assets/images/home-reference.png" alt="Главная GudWin BookS" class="mockup-image" />
 
-          <article class="overlay-card comic-side">
-            <h2>Комиксы / Comics</h2>
-            <div class="inputs-inline">
-              <select>
-                <option>Жанр: Супергерои</option>
-                <option>Жанр: Фэнтези</option>
-                <option>Жанр: Sci-Fi</option>
-              </select>
-              <input type="text" value="Сюжет: Герой vs Зло" readonly />
-            </div>
-            <a class="btn btn-primary" href="./comics.html">Создать комикс</a>
-          </article>
+          <a href="./fairy.html" class="hotspot hotspot-fairy" aria-label="Перейти в сказки"></a>
+          <a href="./comics.html" class="hotspot hotspot-comics" aria-label="Перейти в комиксы"></a>
+
+          <div class="controls controls-fairy">
+            <select><option>Возраст: 4-6 лет</option></select>
+            <select><option>Тема: Дружба</option></select>
+            <button onclick="location.href='./fairy.html'">Создать сказку</button>
+          </div>
+
+          <div class="controls controls-comics">
+            <select><option>Жанр: Супергерои</option></select>
+            <input value="Сюжет: Герой vs Зло" readonly />
+            <button onclick="location.href='./comics.html'">Создать комикс</button>
+          </div>
         </div>
       </section>
 
-      <section class="info-strip reveal">
-        <article><strong>Комиксы с ИИ</strong><span>Сценарий, кадры, реплики.</span></article>
-        <article><strong>Сказки для детей</strong><span>Текст, иллюстрации, мораль.</span></article>
-        <article><strong>Сказка голосом</strong><span>TTS и встроенный плеер.</span></article>
-      </section>
-
-      <section class="pricing-strip reveal">
-        <h3>Тарифы / Plans (Telegram Stars)</h3>
-        <div class="price-grid">
-          <div class="price-card"><h4>Free</h4><p>0 XTR</p></div>
-          <div class="price-card"><h4>GudWin Light</h4><p>500 XTR</p></div>
-          <div class="price-card"><h4>GudWin Pro</h4><p>1000 XTR</p></div>
-        </div>
+      <section class="under-panel">
+        <a href="./fairy.html" class="pill">Сказки</a>
+        <a href="./comics.html" class="pill">Комиксы</a>
+        <a href="./legal/offer.html" class="pill">Документы</a>
       </section>
     </main>
 
-    <footer class="site-footer" id="legal">
-      <div class="footer-col">
-        <h4>GudWin BookS / ГудВин Букс</h4>
-        <p>Сайт работает на русском языке. English version available.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Документы / Legal</h4>
-        <a href="./legal/offer.html">Пользовательское соглашение / Offer</a>
-        <a href="./legal/privacy.html">Политика конфиденциальности / Privacy</a>
-        <a href="./legal/personal-data.html">Политика ПДн / Personal Data</a>
-        <a href="./legal/consent.html">Согласие на ПДн / Consent</a>
-        <a href="./legal/ai-policy.html">Правила ИИ-контента / AI Policy</a>
-        <a href="./legal/stars-info.html">Оплата Stars / Stars Info</a>
-      </div>
-      <div class="footer-col">
-        <h4>Реквизиты / Company</h4>
-        <p>ООО/ИП: заполнить до релиза</p>
-        <p>ИНН/ОГРН: заполнить до релиза</p>
-        <p>Адрес: заполнить до релиза</p>
-        <p>E-mail: legal@gudwinbooks.ru</p>
+    <footer class="footer">
+      <div>GudWin BookS / ГудВин Букс</div>
+      <div>Сайт работает на русском языке. English version available.</div>
+      <div class="footer-links">
+        <a href="./legal/offer.html">Оферта</a>
+        <a href="./legal/privacy.html">Конфиденциальность</a>
+        <a href="./legal/personal-data.html">ПДн</a>
+        <a href="./legal/stars-info.html">Telegram Stars</a>
       </div>
     </footer>
-
-    <script src="./assets/js/main.js"></script>
   </body>
 </html>
