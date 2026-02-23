@@ -4,98 +4,71 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GudWin BookS / ГудВин Букс - Выбор Раздела</title>
-    <meta
-      name="description"
-      content="GudWin BookS / ГудВин Букс: генерация сказок и комиксов с ИИ, иллюстрациями и озвучкой. Авторизация Telegram, оплата Telegram Stars."
-    />
-    <meta property="og:title" content="GudWin BookS / ГудВин Букс" />
-    <meta property="og:description" content="Выберите: Сказки / Comics. Создавайте магические истории и яркие комиксы." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="description" content="Главная GudWin BookS: выбор раздела Сказки или Комиксы, авторизация Telegram и оплата Stars." />
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
   <body data-page="home">
     <div class="splash" id="splash" aria-hidden="false">
-      <div class="splash-book">
-        <div class="book-shell"></div>
-        <div class="book-rays"></div>
-        <h1>GudWin BookS</h1>
-        <p>ГудВин Букс</p>
-      </div>
+      <img src="./assets/images/logo-1.png" alt="GudWin BookS" class="splash-logo" />
+      <p>ГудВин Букс</p>
     </div>
 
     <canvas id="magic-particles" class="magic-particles" aria-hidden="true"></canvas>
 
-    <header class="site-header centered-header">
-      <div class="logo-wrap">
-        <a class="logo" href="./index.html" aria-label="GudWin BookS">
-          <span class="logo-book"></span>
-          <span class="logo-text">GudWin BookS</span>
-          <span class="logo-sub">ГудВин Букс</span>
-        </a>
-      </div>
-      <div class="header-actions">
-        <a class="btn btn-tg" href="https://t.me/" target="_blank" rel="noreferrer">Войти через Telegram / Login via Telegram</a>
-      </div>
+    <header class="site-header top-header">
+      <a class="logo" href="./index.html" aria-label="GudWin BookS">
+        <img src="./assets/images/logo-2.png" alt="GudWin BookS / ГудВин Букс" class="logo-image" />
+      </a>
+      <a class="btn btn-tg" href="https://t.me/" target="_blank" rel="noreferrer">Войти через Telegram / Login via Telegram</a>
     </header>
 
-    <main class="home-main">
-      <section class="hero-choice reveal">
-        <h2>Выберите свой мир / Choose Your Realm</h2>
-        <p>Создавайте волшебные сказки или взрывные комиксы с ИИ, картинками и голосом.</p>
-      </section>
+    <main class="main-wrap">
+      <section class="reference-stage home-stage reveal">
+        <div class="stage-overlay split-overlay">
+          <article class="overlay-card fairy-side">
+            <h2>Сказки / Fairy Tales</h2>
+            <div class="inputs-inline">
+              <select>
+                <option>Возраст: 4-6 лет</option>
+                <option>Возраст: 6-8 лет</option>
+                <option>Возраст: 8-12 лет</option>
+              </select>
+              <select>
+                <option>Тема: Дружба</option>
+                <option>Тема: Приключения</option>
+                <option>Тема: Космос</option>
+              </select>
+            </div>
+            <a class="btn btn-primary" href="./fairy.html">Создать сказку</a>
+          </article>
 
-      <section class="split-choice reveal">
-        <article class="choice-card fairy-card">
-          <h3>Сказки / Fairy Tales</h3>
-          <p>Для детей 4-18 лет: текст, иллюстрации, озвучка, мораль и стиль.</p>
-          <ul>
-            <li>Возраст + тема + ценности</li>
-            <li>Акварель, гравюра, книжная графика</li>
-            <li>Голос: фея, волшебник, нейтральный</li>
-          </ul>
-          <a class="btn btn-primary" href="./fairy.html">Перейти в Сказки / Open Fairy</a>
-        </article>
-
-        <article class="choice-card comics-card">
-          <h3>Комиксы / Comics</h3>
-          <p>Жанр, синопсис, страницы, реплики и кадры с разными стилями.</p>
-          <ul>
-            <li>Фэнтези, sci-fi, супергерои</li>
-            <li>Классика, манга, графический роман</li>
-            <li>Листаемый превью-комикс</li>
-          </ul>
-          <a class="btn btn-primary" href="./comics.html">Перейти в Комиксы / Open Comics</a>
-        </article>
-      </section>
-
-      <section class="quick-pricing reveal">
-        <h3>Тарифы / Plans (Telegram Stars)</h3>
-        <div class="price-grid">
-          <div class="price-card">
-            <h4>Бесплатный / Free</h4>
-            <p class="price">0 XTR</p>
-            <p>Ограниченные генерации, без экспорта PDF/аудио.</p>
-          </div>
-          <div class="price-card">
-            <h4>GudWin Light</h4>
-            <p class="price">500 XTR</p>
-            <p>До 20 сказок, до 6 комиксов, до 10 озвучек.</p>
-          </div>
-          <div class="price-card">
-            <h4>GudWin Pro</h4>
-            <p class="price">1000 XTR</p>
-            <p>До 80 сказок, до 30 комиксов, приоритетная очередь.</p>
-          </div>
+          <article class="overlay-card comic-side">
+            <h2>Комиксы / Comics</h2>
+            <div class="inputs-inline">
+              <select>
+                <option>Жанр: Супергерои</option>
+                <option>Жанр: Фэнтези</option>
+                <option>Жанр: Sci-Fi</option>
+              </select>
+              <input type="text" value="Сюжет: Герой vs Зло" readonly />
+            </div>
+            <a class="btn btn-primary" href="./comics.html">Создать комикс</a>
+          </article>
         </div>
       </section>
 
-      <section class="stories reveal">
-        <h3>Истории пользователей / Stories</h3>
-        <div class="story-grid">
-          <article>"Мама записывает сказку для дочери перед сном"</article>
-          <article>"Автор комиксов тестирует новые сюжетные арки"</article>
-          <article>"Ведущая кружка печатает мини-комикс для детей"</article>
+      <section class="info-strip reveal">
+        <article><strong>Комиксы с ИИ</strong><span>Сценарий, кадры, реплики.</span></article>
+        <article><strong>Сказки для детей</strong><span>Текст, иллюстрации, мораль.</span></article>
+        <article><strong>Сказка голосом</strong><span>TTS и встроенный плеер.</span></article>
+      </section>
+
+      <section class="pricing-strip reveal">
+        <h3>Тарифы / Plans (Telegram Stars)</h3>
+        <div class="price-grid">
+          <div class="price-card"><h4>Free</h4><p>0 XTR</p></div>
+          <div class="price-card"><h4>GudWin Light</h4><p>500 XTR</p></div>
+          <div class="price-card"><h4>GudWin Pro</h4><p>1000 XTR</p></div>
         </div>
       </section>
     </main>
@@ -109,7 +82,7 @@
         <h4>Документы / Legal</h4>
         <a href="./legal/offer.html">Пользовательское соглашение / Offer</a>
         <a href="./legal/privacy.html">Политика конфиденциальности / Privacy</a>
-        <a href="./legal/personal-data.html">Политика ПДн (152-ФЗ) / Personal Data</a>
+        <a href="./legal/personal-data.html">Политика ПДн / Personal Data</a>
         <a href="./legal/consent.html">Согласие на ПДн / Consent</a>
         <a href="./legal/ai-policy.html">Правила ИИ-контента / AI Policy</a>
         <a href="./legal/stars-info.html">Оплата Stars / Stars Info</a>

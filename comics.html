@@ -4,18 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Комиксы / Comics - GudWin BookS / ГудВин Букс</title>
-    <meta name="description" content="Генерация комиксов с ИИ: сценарии, страницы, кадры, реплики и озвучка." />
+    <meta name="description" content="Комикс-раздел GudWin BookS: генерация сценария, страниц и кадров." />
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
   <body data-page="comics">
     <canvas id="magic-particles" class="magic-particles" aria-hidden="true"></canvas>
 
-    <header class="site-header">
-      <a class="logo" href="./index.html" aria-label="GudWin BookS">
-        <span class="logo-book"></span>
-        <span class="logo-text">GudWin BookS</span>
-        <span class="logo-sub">ГудВин Букс</span>
-      </a>
+    <header class="site-header top-header">
+      <a class="logo" href="./index.html"><img src="./assets/images/logo-2.png" alt="GudWin BookS" class="logo-image" /></a>
       <nav class="nav-links">
         <a href="./index.html">Главная / Home</a>
         <a href="./fairy.html">Сказки / Fairy</a>
@@ -23,109 +19,47 @@
       <a class="btn btn-tg" href="https://t.me/" target="_blank" rel="noreferrer">Войти через Telegram</a>
     </header>
 
-    <main class="page-main">
-      <section class="page-hero reveal">
-        <h1>Создавайте комиксы с ИИ / Create Comics with AI</h1>
-        <p>Яркий комикс-режим: жанр, синопсис, страницы, кадры и реплики.</p>
+    <main class="main-wrap">
+      <section class="reference-stage comics-stage reveal">
+        <div class="stage-overlay one-overlay">
+          <article class="overlay-card large-card comic-accent">
+            <h1>Создавайте комиксы с ИИ / Create Comics with AI</h1>
+            <form id="comics-form" class="form-grid" autocomplete="off">
+              <div class="inputs-inline">
+                <select name="genre" required><option>Супергерои</option><option>Фэнтези</option><option>Sci-Fi</option><option>Приключения</option></select>
+                <select name="pages" required><option>4</option><option selected>8</option><option>12</option></select>
+              </div>
+              <div class="inputs-inline">
+                <select name="style" required><option>Классический комикс</option><option>Манга</option><option>Графический роман</option></select>
+                <input type="text" value="Сюжет: герой сражается с кодлуном" readonly />
+              </div>
+              <textarea name="synopsis" rows="3" placeholder="Краткий синопсис" required>Команда героев спасает город от энергетического шторма</textarea>
+              <div class="actions-row">
+                <button class="btn btn-primary" type="submit">Сгенерировать комикс</button>
+                <button class="btn" type="button" id="comics-rerender">Перегенерировать кадр</button>
+              </div>
+            </form>
+          </article>
+        </div>
       </section>
 
-      <section class="generator-layout reveal">
-        <article class="panel">
-          <h2>Параметры комикса / Comic Settings</h2>
-          <form id="comics-form" class="form-grid" autocomplete="off">
-            <label>Жанр / Genre
-              <select name="genre" required>
-                <option>Супергерои</option>
-                <option>Фэнтези</option>
-                <option>Sci-Fi</option>
-                <option>Приключения</option>
-              </select>
-            </label>
-            <label>Страницы / Pages
-              <select name="pages" required>
-                <option>4</option>
-                <option selected>8</option>
-                <option>12</option>
-              </select>
-            </label>
-            <label>Стиль / Style
-              <select name="style" required>
-                <option>Классический комикс</option>
-                <option>Манга</option>
-                <option>Графический роман</option>
-              </select>
-            </label>
-            <label>Синопсис / Synopsis
-              <textarea name="synopsis" rows="4" placeholder="Например: команда героев спасает город от энергетического шторма" required></textarea>
-            </label>
-            <div class="actions-row">
-              <button class="btn btn-primary" type="submit">Сгенерировать комикс / Generate Comic</button>
-              <button class="btn" type="button" id="comics-rerender">Перегенерировать кадр</button>
-            </div>
-          </form>
-        </article>
-
+      <section class="result-section reveal">
         <article class="panel">
           <h2>Сценарий и кадры / Script and Frames</h2>
-          <div id="comics-result" class="result-box">
-            <p class="muted">После генерации появятся страницы и реплики.</p>
+          <div id="comics-result" class="result-box"><p class="muted">После генерации появятся страницы и реплики.</p></div>
+          <div class="tts-row" style="margin-top:10px;">
+            <select id="comics-voice"><option>Эпичный / Epic</option><option>Нейтральный / Neutral</option></select>
+            <button class="btn btn-primary" type="button" id="comics-tts">Слушать комикс</button>
           </div>
-          <div class="tts-card">
-            <h3>Озвучка комикса / Comic Voice</h3>
-            <div class="tts-row">
-              <select id="comics-voice">
-                <option>Эпичный / Epic</option>
-                <option>Нейтральный / Neutral</option>
-              </select>
-              <button class="btn btn-primary" type="button" id="comics-tts">Слушать комикс</button>
-            </div>
-            <div class="progress-bar"><span id="comics-progress"></span></div>
-          </div>
+          <div class="progress-bar"><span id="comics-progress"></span></div>
         </article>
-      </section>
-
-      <section class="cards-showcase reveal">
-        <h2>Крутые комиксы / Top Comics</h2>
-        <div class="flip-tabs" data-tabs>
-          <button class="tab active" data-target="comic-1">Экшен</button>
-          <button class="tab" data-target="comic-2">Приключения</button>
-          <button class="tab" data-target="comic-3">Фантастика</button>
-        </div>
-        <div class="tab-panel active" id="comic-1">
-          <article class="comic-card"><h4>Битва за мегаполис</h4><button class="btn">Читать</button></article>
-          <article class="comic-card"><h4>Штормовой удар</h4><button class="btn">Читать</button></article>
-          <article class="comic-card"><h4>Код красный</h4><button class="btn">Читать</button></article>
-        </div>
-        <div class="tab-panel" id="comic-2">
-          <article class="comic-card"><h4>Миссия на Марс</h4><button class="btn">Читать</button></article>
-          <article class="comic-card"><h4>Остров теней</h4><button class="btn">Читать</button></article>
-          <article class="comic-card"><h4>Сфера силы</h4><button class="btn">Читать</button></article>
-        </div>
-        <div class="tab-panel" id="comic-3">
-          <article class="comic-card"><h4>Квантовый мост</h4><button class="btn">Читать</button></article>
-          <article class="comic-card"><h4>Орден протонов</h4><button class="btn">Читать</button></article>
-          <article class="comic-card"><h4>Фронтир Z</h4><button class="btn">Читать</button></article>
-        </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="footer-col">
-        <h4>Быстрые ссылки / Quick links</h4>
-        <a href="./index.html">Главная</a>
-        <a href="./fairy.html">Сказки</a>
-        <a href="#">Тарифы</a>
-      </div>
-      <div class="footer-col">
-        <h4>Документы / Legal</h4>
-        <a href="./legal/offer.html">Пользовательское соглашение</a>
-        <a href="./legal/privacy.html">Политика конфиденциальности</a>
-        <a href="./legal/personal-data.html">Политика ПДн</a>
-      </div>
-      <div class="footer-col">
-        <h4>Примечание / Note</h4>
-        <p>RU интерфейс основной. EN предоставляется как равнозначный дубль.</p>
-      </div>
+      <div class="footer-col"><h4>Документы / Legal</h4><a href="./legal/offer.html">Offer</a><a href="./legal/privacy.html">Privacy</a><a href="./legal/personal-data.html">Personal Data</a></div>
+      <div class="footer-col"><h4>Контакты / Contacts</h4><p>legal@gudwinbooks.ru</p><p>Support: Telegram</p></div>
+      <div class="footer-col"><h4>Примечание / Note</h4><p>RU интерфейс основной. EN дубль равного размера.</p></div>
     </footer>
 
     <script src="./assets/js/main.js"></script>
