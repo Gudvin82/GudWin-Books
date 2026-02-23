@@ -3,188 +3,126 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GudWin BookS | ГудВин Букс</title>
+    <title>GudWin BookS / ГудВин Букс - Выбор Раздела</title>
     <meta
       name="description"
-      content="GudWin BookS — сказочный сервис генерации комиксов и детских сказок с текстом, иллюстрациями и озвучкой. Оплата Telegram Stars."
+      content="GudWin BookS / ГудВин Букс: генерация сказок и комиксов с ИИ, иллюстрациями и озвучкой. Авторизация Telegram, оплата Telegram Stars."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Forum&family=Marck+Script&family=Unbounded:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles.css" />
+    <meta property="og:title" content="GudWin BookS / ГудВин Букс" />
+    <meta property="og:description" content="Выберите: Сказки / Comics. Создавайте магические истории и яркие комиксы." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
-  <body>
-    <div class="splash" id="splash">
-      <div class="sparkle-layer"></div>
-      <div class="book-logo">
-        <div class="book">
-          <div class="book-page left"></div>
-          <div class="book-page right"></div>
-          <div class="book-star">✶</div>
-        </div>
+  <body data-page="home">
+    <div class="splash" id="splash" aria-hidden="false">
+      <div class="splash-book">
+        <div class="book-shell"></div>
+        <div class="book-rays"></div>
         <h1>GudWin BookS</h1>
         <p>ГудВин Букс</p>
       </div>
     </div>
 
-    <div class="stars-bg" aria-hidden="true"></div>
+    <canvas id="magic-particles" class="magic-particles" aria-hidden="true"></canvas>
 
-    <header class="header">
-      <div class="brand">
-        <span class="brand-main">GudWin BookS</span>
-        <span class="brand-sub">ГудВин Букс</span>
+    <header class="site-header centered-header">
+      <div class="logo-wrap">
+        <a class="logo" href="./index.html" aria-label="GudWin BookS">
+          <span class="logo-book"></span>
+          <span class="logo-text">GudWin BookS</span>
+          <span class="logo-sub">ГудВин Букс</span>
+        </a>
       </div>
-      <nav class="nav">
-        <a href="#features">Возможности</a>
-        <a href="#generator">Генератор</a>
-        <a href="#pricing">Тарифы</a>
-        <a href="#legal">Документы</a>
-      </nav>
-      <a class="tg-login" href="https://t.me/" target="_blank" rel="noreferrer">Войти через Telegram</a>
+      <div class="header-actions">
+        <a class="btn btn-tg" href="https://t.me/" target="_blank" rel="noreferrer">Войти через Telegram / Login via Telegram</a>
+      </div>
     </header>
 
-    <main>
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">арт • комиксы • старинные книги • сказки</p>
-          <h2>Создавайте волшебные сказки и комиксы с ИИ за пару кликов</h2>
-          <p>
-            Тексты, картинки и озвучка сказок в одном месте. Русский интерфейс по умолчанию, английский как дубль.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#generator">Создать проект</a>
-            <a class="btn btn-ghost" href="#demo">Посмотреть демо</a>
-          </div>
-        </div>
-        <div class="hero-art" id="demo">
-          <div class="magic-card">
-            <h3>Демо-сказка</h3>
-            <p>«Лунный замок и храбрый лис»</p>
-            <ul>
-              <li>Возраст: 6–8</li>
-              <li>Стиль: Акварельная сказка</li>
-              <li>Озвучка: Фея</li>
-            </ul>
-            <button class="btn btn-small">Слушать демо</button>
-          </div>
-        </div>
+    <main class="home-main">
+      <section class="hero-choice reveal">
+        <h2>Выберите свой мир / Choose Your Realm</h2>
+        <p>Создавайте волшебные сказки или взрывные комиксы с ИИ, картинками и голосом.</p>
       </section>
 
-      <section class="features reveal" id="features">
-        <article>
-          <h3>Комиксы с ИИ</h3>
-          <p>Синопсис → сценарий → страницы и кадры с репликами.</p>
+      <section class="split-choice reveal">
+        <article class="choice-card fairy-card">
+          <h3>Сказки / Fairy Tales</h3>
+          <p>Для детей 4-18 лет: текст, иллюстрации, озвучка, мораль и стиль.</p>
+          <ul>
+            <li>Возраст + тема + ценности</li>
+            <li>Акварель, гравюра, книжная графика</li>
+            <li>Голос: фея, волшебник, нейтральный</li>
+          </ul>
+          <a class="btn btn-primary" href="./fairy.html">Перейти в Сказки / Open Fairy</a>
         </article>
-        <article>
-          <h3>Сказки для детей</h3>
-          <p>Возраст, тема, мораль → главы и сказочные иллюстрации.</p>
-        </article>
-        <article>
-          <h3>Сказка голосом</h3>
-          <p>Генерация озвучки: фея, волшебник, нейтральный голос.</p>
+
+        <article class="choice-card comics-card">
+          <h3>Комиксы / Comics</h3>
+          <p>Жанр, синопсис, страницы, реплики и кадры с разными стилями.</p>
+          <ul>
+            <li>Фэнтези, sci-fi, супергерои</li>
+            <li>Классика, манга, графический роман</li>
+            <li>Листаемый превью-комикс</li>
+          </ul>
+          <a class="btn btn-primary" href="./comics.html">Перейти в Комиксы / Open Comics</a>
         </article>
       </section>
 
-      <section class="workflow reveal">
-        <h3>Как это работает</h3>
-        <div class="steps">
-          <div><strong>1.</strong> Придумайте идею</div>
-          <div><strong>2.</strong> Выберите стиль</div>
-          <div><strong>3.</strong> Смотрите и слушайте</div>
-        </div>
-      </section>
-
-      <section class="generator reveal" id="generator">
-        <div class="panel">
-          <h3>Создать сказку</h3>
-          <label>Идея сюжета<textarea id="storyIdea" placeholder="Например: девочка и дракон учатся дружбе"></textarea></label>
-          <div class="grid-two">
-            <label>Возраст
-              <select id="age">
-                <option>4–6</option>
-                <option selected>6–8</option>
-                <option>8–12</option>
-              </select>
-            </label>
-            <label>Стиль
-              <select id="style">
-                <option>Акварельная сказка</option>
-                <option>Старинная гравюра</option>
-                <option>Золотая книга</option>
-              </select>
-            </label>
-          </div>
-          <button class="btn btn-primary" id="generateStory">Сгенерировать сказку</button>
-        </div>
-
-        <div class="panel">
-          <h3>Результат</h3>
-          <div class="result" id="resultBox">
-            <p class="muted">Здесь появится текст истории и кнопка озвучки.</p>
-          </div>
-          <div class="audio-player">
-            <button class="btn btn-small">▶ Слушать</button>
-            <span>mp3 • demo</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="pricing reveal" id="pricing">
-        <h3>Тарифы (Telegram Stars)</h3>
-        <div class="pricing-grid">
-          <article>
-            <h4>Бесплатный</h4>
+      <section class="quick-pricing reveal">
+        <h3>Тарифы / Plans (Telegram Stars)</h3>
+        <div class="price-grid">
+          <div class="price-card">
+            <h4>Бесплатный / Free</h4>
             <p class="price">0 XTR</p>
-            <ul>
-              <li>Ограниченные генерации</li>
-              <li>Без экспорта</li>
-            </ul>
-          </article>
-          <article>
+            <p>Ограниченные генерации, без экспорта PDF/аудио.</p>
+          </div>
+          <div class="price-card">
             <h4>GudWin Light</h4>
             <p class="price">500 XTR</p>
-            <ul>
-              <li>До 20 сказок / мес</li>
-              <li>До 6 комиксов</li>
-              <li>До 10 озвучек</li>
-            </ul>
-          </article>
-          <article>
+            <p>До 20 сказок, до 6 комиксов, до 10 озвучек.</p>
+          </div>
+          <div class="price-card">
             <h4>GudWin Pro</h4>
             <p class="price">1000 XTR</p>
-            <ul>
-              <li>До 80 сказок / мес</li>
-              <li>До 30 комиксов</li>
-              <li>Приоритетная очередь</li>
-            </ul>
-          </article>
+            <p>До 80 сказок, до 30 комиксов, приоритетная очередь.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="stories reveal">
+        <h3>Истории пользователей / Stories</h3>
+        <div class="story-grid">
+          <article>"Мама записывает сказку для дочери перед сном"</article>
+          <article>"Автор комиксов тестирует новые сюжетные арки"</article>
+          <article>"Ведущая кружка печатает мини-комикс для детей"</article>
         </div>
       </section>
     </main>
 
-    <footer class="footer" id="legal">
-      <div>
-        <h4>Документы</h4>
-        <a href="./legal/offer.html">Пользовательское соглашение</a>
-        <a href="./legal/privacy.html">Политика конфиденциальности</a>
-        <a href="./legal/personal-data.html">Политика ПДн (152-ФЗ)</a>
-        <a href="./legal/ai-rules.html">Правила ИИ-контента</a>
-      </div>
-      <div>
-        <h4>Реквизиты</h4>
-        <p>Заполнить перед релизом: ИП/ООО, ИНН, ОГРН, адрес, e-mail.</p>
+    <footer class="site-footer" id="legal">
+      <div class="footer-col">
+        <h4>GudWin BookS / ГудВин Букс</h4>
         <p>Сайт работает на русском языке. English version available.</p>
       </div>
-      <div>
-        <h4>Платежи</h4>
-        <p>Оплата только Telegram Stars (XTR), не фиатная валюта.</p>
-        <a href="https://telegram.org/blog/telegram-stars" target="_blank" rel="noreferrer">О Stars</a>
+      <div class="footer-col">
+        <h4>Документы / Legal</h4>
+        <a href="./legal/offer.html">Пользовательское соглашение / Offer</a>
+        <a href="./legal/privacy.html">Политика конфиденциальности / Privacy</a>
+        <a href="./legal/personal-data.html">Политика ПДн (152-ФЗ) / Personal Data</a>
+        <a href="./legal/consent.html">Согласие на ПДн / Consent</a>
+        <a href="./legal/ai-policy.html">Правила ИИ-контента / AI Policy</a>
+        <a href="./legal/stars-info.html">Оплата Stars / Stars Info</a>
+      </div>
+      <div class="footer-col">
+        <h4>Реквизиты / Company</h4>
+        <p>ООО/ИП: заполнить до релиза</p>
+        <p>ИНН/ОГРН: заполнить до релиза</p>
+        <p>Адрес: заполнить до релиза</p>
+        <p>E-mail: legal@gudwinbooks.ru</p>
       </div>
     </footer>
 
-    <script src="./app.js"></script>
+    <script src="./assets/js/main.js"></script>
   </body>
 </html>
